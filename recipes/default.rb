@@ -5,6 +5,8 @@
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
 include_recipe 'chef-client::default'
+include_recipe 'ssh-hardening'
+include_recipe 'ntp'
 
 node.default['teknofire']['chef-client-version'] = '14.4.56'
 
