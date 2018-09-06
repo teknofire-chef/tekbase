@@ -14,13 +14,6 @@ chef_client_updater 'Install latest' do
   version node['teknofire']['chef-client-version']
 end
 
-user 'teknofire' do
-  manage_home true
-  shell '/bin/bash'
-  action [:create, :manage]
-end
-
-sudo 'admin' do
-  user 'teknofire'
-  nopasswd true
+tekbase_user 'teknofire' do
+  sudo true
 end
